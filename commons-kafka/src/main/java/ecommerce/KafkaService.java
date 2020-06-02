@@ -3,7 +3,6 @@ package ecommerce;
 import java.io.Closeable;
 import java.time.Duration;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 import java.util.UUID;
@@ -41,7 +40,12 @@ class KafkaService<T> implements Closeable {
 			if (!records.isEmpty()) {
 				System.out.println("encotrei " + records.count() + " registros");
 				records.forEach(( record ) -> {
-					function.consume(record);
+					try {
+						function.consume(record);
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				});
 			}
 		}

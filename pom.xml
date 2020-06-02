@@ -53,5 +53,6 @@
 		<module>service-email</module>
 		<module>service-new-orders</module>
 		<module>commons-kafka</module>
+		<module>service-users</module>
 	</modules>
 </project>

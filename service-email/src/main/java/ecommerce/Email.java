@@ -18,4 +18,9 @@ public class Email {
 		return body;
 	}
 
+	@Override
+	public String toString() {
+		return "Email [subject=" + subject + ", body=" + body + "]";
+	}
+
 }
