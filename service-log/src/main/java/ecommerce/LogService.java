@@ -16,7 +16,7 @@ public class LogService {
 		params.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
 		
 		LogService logService = new LogService();
-		try (KafkaService<String> kafkaService = new KafkaService(
+		try (KafkaService<String> kafkaService = new KafkaService<>(
 				LogService.class.getSimpleName(), 
 				Pattern.compile("ECOMMERCE.*"),
 				logService::parse, 
